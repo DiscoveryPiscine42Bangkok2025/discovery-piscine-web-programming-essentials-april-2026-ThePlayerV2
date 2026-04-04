@@ -17,11 +17,20 @@ html, body {
 
 .box {
   flex: 1;
-  min-width: 300px;
+  min-width: 200px;
   padding: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.gray-light {
+  background-color: #bbb;
+}
+
+.gray-dark {
+  background-color: #ccc;
 }
 
 @media (max-width: 600px) {
