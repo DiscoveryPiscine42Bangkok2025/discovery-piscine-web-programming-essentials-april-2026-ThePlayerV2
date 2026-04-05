@@ -1,0 +1,45 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img1 {
+    background-image: url('https://cdn.imgchest.com/files/450ec26c8cb1.webp');
+}
+
+.img2 {
+    background-image: url('https://cdn.imgchest.com/files/8c4f2176fe9b.jpg');
+}
+
+.message span {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    font-size: 24px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.black-block {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.black-block h3 {
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
