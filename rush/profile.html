@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="profile.css">
+  <title>tkunariy</title>
 </head>
 <body>
 
@@ -14,26 +16,44 @@
     <div class="card-static">
       <div class="card-body">
         <h2 class="card-title">About Me</h2>
-        <p>Discord Community Manager</p>
+        <p>Discord Community Manager &<br>Student at Satit Prasarnmit Demonstration School</p>
       </div>
     </div>
 
     <div class="tab-selection">
-      <span class="tab active" onclick="switchTab('card2', this)">Portfolio</span>
-      <span class="tab" onclick="switchTab('card3', this)">Socials</span>
+      <span class="tab active" onclick="switchTab('card2', this)">Education</span>
+      <span class="tab" onclick="switchTab('card3', this)">Placeholder</span>
+      <span class="tab" onclick="switchTab('card4', this)">Socials</span>
+      <span class="tab" onclick="switchTab('card5', this)">Other</span>
     </div>
 
-    <div id="card2" class="card-tabs info-card">
-      <div class="card-body">
-        <h2 class="card-title">Achievements</h2>
-        <p>Nothing, yeah...</p>
+    <div class="tab-content-wrapper">
+      <div id="card2" class="card-tabs info-card">
+        <div class="card-body">
+          <h2 class="card-title">Currently Studying at...</h2>
+          <p>Satit Prasarnmit Demonstration School (Secondary)<br>Grade 11 (M.5)<br>Major: Computer Engineering (CE)</p>
+        </div>
       </div>
-    </div>
 
-    <div id="card3" class="card-tabs info-card" style="display: none;">
-      <div class="card-body">
-        <h2 class="card-title">Socials</h2>
-        <p>Information for the second tab.</p>
+      <div id="card3" class="card-tabs info-card" style="display: none;">
+        <div class="card-body">
+          <h2 class="card-title">Placeholderrrr</h2>
+          <p>im a larper bro</p>
+        </div>
+      </div>
+
+      <div id="card4" class="card-tabs info-card" style="display: none;">
+        <div class="card-body">
+          <h2 class="card-title">Socials</h2>
+          <p>Discord: playerv2<br>Instagram: theplayerv2<br>Spotify: theplayerv2<br>TikTok: theplayerver2</p>
+        </div>
+      </div>
+
+      <div id="card5" class="card-tabs info-card" style="display: none;">
+        <div class="card-body">
+          <h2 class="card-title">Other</h2>
+          <p>whatever makes you find me ig bro.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -45,13 +65,6 @@
     <div class="overlay"></div>
   </div>
 
-  <script>
-    function switchTab(cardId, element) {
-      document.querySelectorAll('.info-card').forEach(card => card.style.display = 'none');
-      document.getElementById(cardId).style.display = 'block';
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      element.classList.add('active');
-    }
-  </script>
+  <script src="profile.js"></script>
 </body>
 </html>
