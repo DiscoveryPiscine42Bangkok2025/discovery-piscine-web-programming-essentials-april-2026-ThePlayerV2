@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <div class="content-container">
+    <img src="https://cdn.imgchest.com/files/5b95f8070fc9.jpg" alt="Profile Picture" class="pfp">
+    <h1 class="name">tkunariy</h1>
+    <p class="realname">(Teerath Kunariyasup)</p>
+
+    <div class="card-static">
+      <div class="card-body">
+        <h2 class="card-title">About Me</h2>
+        <p>Discord Community Manager</p>
+      </div>
+    </div>
+
+    <div class="tab-selection">
+      <span class="tab active" onclick="switchTab('card2', this)">Portfolio</span>
+      <span class="tab" onclick="switchTab('card3', this)">Socials</span>
+    </div>
+
+    <div id="card2" class="card-tabs info-card">
+      <div class="card-body">
+        <h2 class="card-title">Achievements</h2>
+        <p>Nothing, yeah...</p>
+      </div>
+    </div>
+
+    <div id="card3" class="card-tabs info-card" style="display: none;">
+      <div class="card-body">
+        <h2 class="card-title">Socials</h2>
+        <p>Information for the second tab.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="background">
+    <video autoplay loop muted playsinline class="back-video">
+      <source src="https://cdn.imgchest.com/files/6ec6148396a8.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+  </div>
+
+  <script>
+    function switchTab(cardId, element) {
+      document.querySelectorAll('.info-card').forEach(card => card.style.display = 'none');
+      document.getElementById(cardId).style.display = 'block';
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      element.classList.add('active');
+    }
+  </script>
+</body>
+</html>
