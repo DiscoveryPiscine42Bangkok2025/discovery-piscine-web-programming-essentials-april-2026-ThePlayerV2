@@ -5,9 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="nav.css">
   <title>tkunariy</title>
 </head>
 <body>
+
+<nav class="fab-nav">
+  <div class="nav-wrapper" id="nav-wrapper">
+    <div class="nav-trigger" onclick="toggleNav()">
+      <img src="https://cdn.imgchest.com/files/26964c7aa609.png" alt="Compass" id="nav-icon">
+    </div>
+
+    <div class="nav-menu">
+      <a href="index.html" class="menu-item">Home</a>
+      <a href="#" class="menu-item">Lamtan</a>
+      <a href="#" class="menu-item">Baan</a>
+    </div>
+  </div>
+</nav>
 
   <div class="content-container">
     <img src="https://cdn.imgchest.com/files/5b95f8070fc9.jpg" alt="Profile Picture" class="pfp">
@@ -72,5 +87,6 @@
   </div>
 
   <script src="profile.js"></script>
+  <script src="nav.js"></script>
 </body>
 </html>
