@@ -1,40 +1,59 @@
-const lInput = document.getElementById('l');
-const rInput = document.getElementById('r');
-const opSelect = document.getElementById('op');
-const btn = document.getElementById('go');
+var leftInput = document.getElementById('left');
+var rightInput = document.getElementById('right');
+var operatorSelect = document.getElementById('op');
+var button = document.getElementById('btn');
 
-setInterval(() => {
+function reminder() {
     alert('Please, use me...');
-}, 30000);
+}
 
-btn.addEventListener('click', () => {
-    const v1 = lInput.value;
-    const v2 = rInput.value;
-    const op = opSelect.value;
+setInterval(reminder, 30000);
 
-    const isNum = (str) => /^\d+$/.test(str);
+function checkIsPositiveInteger(str) {
+    if (str === "") {
+        return false;
+    }
+    for (var i = 0; i < str.length; i++) {
+        var char = str[i];
+        if (char < '0' || char > '9') {
+            return false;
+        }
+    }
+    return true;
+}
 
-    if (!isNum(v1) || !isNum(v2)) {
+button.onclick = function() {
+    var val1 = leftInput.value;
+    var val2 = rightInput.value;
+    var op = operatorSelect.value;
+
+    if (checkIsPositiveInteger(val1) === false || checkIsPositiveInteger(val2) === false) {
         alert('Error :(');
         return;
     }
 
-    const n1 = parseInt(v1, 10);
-    const n2 = parseInt(v2, 10);
-    let res;
+    var n1 = parseInt(val1);
+    var n2 = parseInt(val2);
+    var result;
 
     if ((op === '/' || op === '%') && n2 === 0) {
-        console.log("it’s over 9000!");
-        alert("it’s over 9000!");
+        alert("It’s over 9000!");
+        console.log("It’s over 9000!");
         return;
     }
 
-    if (op === '+') res = n1 + n2;
-    if (op === '-') res = n1 - n2;
-    if (op === '*') res = n1 * n2;
-    if (op === '/') res = n1 / n2;
-    if (op === '%') res = n1 % n2;
+    if (op === '+') {
+        result = n1 + n2;
+    } else if (op === '-') {
+        result = n1 - n2;
+    } else if (op === '*') {
+        result = n1 * n2;
+    } else if (op === '/') {
+        result = n1 / n2;
+    } else if (op === '%') {
+        result = n1 % n2;
+    }
 
-    console.log(res);
-    alert(res);
-});
+    alert(result);
+    console.log(result);
+};
