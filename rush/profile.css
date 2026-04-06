@@ -8,10 +8,9 @@
 body {
   background: black;
   color: white;
-  overflow-y: auto;
 }
 
-.background {
+.bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +19,7 @@ body {
   z-index: -1;
 }
 
-.back-video {
+.bgvideo {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -35,7 +34,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.content-container {
+.wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,8 +63,7 @@ body {
   font-size: 1em;
 }
 
-.card-static, 
-.card-tabs {
+.bio, .box {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -77,14 +75,11 @@ body {
   margin-bottom: 20px;
   width: fit-content;
   max-width: 90vw;
-  height: auto;
 }
 
-.card-static {
-  min-width: 300px;
-}
+.bio { min-width: 300px; }
 
-.tab-selection {
+.tabs {
   display: flex;
   gap: 30px;
   margin-bottom: 25px;
@@ -105,26 +100,26 @@ body {
   border-bottom: 2px solid white;
 }
 
-.tab-content-wrapper {
+.view {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.card-title {
+.title {
   font-size: 1.3rem;
   margin: 0 0 10px 0;
   white-space: nowrap;
 }
 
-.card-body {
+.body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.card-body p {
+.body p {
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -132,14 +127,14 @@ body {
   white-space: nowrap;
 }
 
-.social-links {
+.socs {
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: flex-start;
 }
 
-.social-links a {
+.socs a {
   color: white;
   text-decoration: none;
   display: flex;
@@ -148,24 +143,16 @@ body {
   font-size: 1rem;
   padding: 8px 15px;
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
   width: 100%;
 }
 
-.social-links a:hover {
-  color: #fff;
-  text-shadow: 
-    0 0 2px #fff,
-    0 0 5px rgba(255, 255, 255, 0.5); 
+.socs a:hover {
+  text-shadow: 0 0 2px #fff, 0 0 5px rgba(255, 255, 255, 0.5); 
 }
 
-.social-links i {
+.socs i {
   font-size: 1.2rem;
   width: 20px;
   text-align: center;
-  transition: all 0.3s ease;
-}
-
-.social-links a:hover i {
-  filter: drop-shadow(0 0 2px #fff);
 }

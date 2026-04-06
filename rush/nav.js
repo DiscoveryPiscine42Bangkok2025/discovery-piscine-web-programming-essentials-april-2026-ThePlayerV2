@@ -1,13 +1,13 @@
 function toggleNav() {
-    const navWrapper = document.getElementById('nav-wrapper');
-    navWrapper.classList.toggle('active');
+    const bar = document.getElementById('navbar');
+    bar.classList.toggle('active');
 }
 
-document.addEventListener('click', function(event) {
-    const navWrapper = document.getElementById('nav-wrapper');
-    const isClickInside = navWrapper.contains(event.target);
+document.addEventListener('click', function(e) {
+    const bar = document.getElementById('navbar');
+    const inside = bar.contains(e.target);
 
-    if (!isClickInside && navWrapper.classList.contains('active')) {
-        navWrapper.classList.remove('active');
+    if (!inside && bar.classList.contains('active')) {
+        bar.classList.remove('active');
     }
 });

@@ -1,17 +1,11 @@
-function switchTab(cardId, element) {
-  const allCards = document.querySelectorAll('.info-card');
-  allCards.forEach(card => {
-    card.style.display = 'none';
-  });
+function switchTab(id, el) {
+  const panes = document.querySelectorAll('.pane');
+  panes.forEach(p => p.style.display = 'none');
 
-  const selectedCard = document.getElementById(cardId);
-  if (selectedCard) {
-    selectedCard.style.display = 'block';
-  }
+  const target = document.getElementById(id);
+  if (target) target.style.display = 'block';
 
-  const allTabs = document.querySelectorAll('.tab');
-  allTabs.forEach(tab => {
-    tab.classList.remove('active');
-  });
-  element.classList.add('active');
+  const all = document.querySelectorAll('.tab');
+  all.forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
 }

@@ -10,83 +10,82 @@
 </head>
 <body>
 
-<nav class="fab-nav">
-  <div class="nav-wrapper" id="nav-wrapper">
-    <div class="nav-trigger" onclick="toggleNav()">
-      <img src="https://cdn.imgchest.com/files/26964c7aa609.png" alt="Compass" id="nav-icon">
+<nav class="fabnav">
+  <div class="navbar" id="navbar">
+    <div class="navtrigger" onclick="toggleNav()">
+      <img src="https://cdn.imgchest.com/files/26964c7aa609.png" alt="Icon" id="nav-icon">
     </div>
-
-    <div class="nav-menu">
-      <a href="index.html" class="menu-item">Home</a>
-      <a href="#" class="menu-item">Lamtan</a>
-      <a href="#" class="menu-item">Baan</a>
+    <div class="navmenu">
+      <a href="index.html" class="navitem">Home</a>
+      <a href="#" class="navitem">Lamtan</a>
+      <a href="#" class="navitem">Baan</a>
     </div>
   </div>
 </nav>
 
-  <div class="content-container">
-    <img src="https://cdn.imgchest.com/files/5b95f8070fc9.jpg" alt="Profile Picture" class="pfp">
-    <h1 class="name">tkunariy</h1>
-    <p class="realname">(Teerath Kunariyasup)</p>
+<div class="wrap">
+  <img src="https://cdn.imgchest.com/files/5b95f8070fc9.jpg" alt="PFP" class="pfp">
+  <h1 class="name">tkunariy</h1>
+  <p class="realname">(Teerath Kunariyasup)</p>
 
-    <div class="card-static">
-      <div class="card-body">
-        <h2 class="card-title">About Me</h2>
-        <p>Discord Community Manager &<br>Student at Satit Prasarnmit Demonstration School</p>
-      </div>
-    </div>
-
-    <div class="tab-selection">
-      <span class="tab active" onclick="switchTab('card2', this)">Education</span>
-      <span class="tab" onclick="switchTab('card3', this)">Placeholder</span>
-      <span class="tab" onclick="switchTab('card4', this)">Socials</span>
-      <span class="tab" onclick="switchTab('card5', this)">Other</span>
-    </div>
-
-    <div class="tab-content-wrapper">
-      <div id="card2" class="card-tabs info-card">
-        <div class="card-body">
-          <h2 class="card-title">Currently Studying at...</h2>
-          <p>Satit Prasarnmit Demonstration School (Secondary)<br>Grade 11 (M.5)<br>Computer Engineering Major (CE)</p>
-        </div>
-      </div>
-
-      <div id="card3" class="card-tabs info-card" style="display: none;">
-        <div class="card-body">
-          <h2 class="card-title">Placeholderrrr</h2>
-          <p>im a larper bro</p>
-        </div>
-      </div>
-
-      <div id="card4" class="card-tabs info-card" style="display: none;">
-        <div class="card-body">
-          <h2 class="card-title">Socials</h2>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-discord"></i> playerv2</a>
-            <a href="#"><i class="fab fa-instagram"></i> theplayerv2</a>
-            <a href="#"><i class="fab fa-spotify"></i> theplayerv2</a>
-            <a href="#"><i class="fab fa-tiktok"></i> theplayerver2</a>
-          </div>
-        </div>
-      </div>
-
-      <div id="card5" class="card-tabs info-card" style="display: none;">
-        <div class="card-body">
-          <h2 class="card-title">Other</h2>
-          <p>whatever makes you find me ig bro.</p>
-        </div>
-      </div>
+  <div class="bio">
+    <div class="body">
+      <h2 class="title">About Me</h2>
+      <p>Discord Community Manager &<br>Student at Satit Prasarnmit</p>
     </div>
   </div>
 
-  <div class="background">
-    <video autoplay loop muted playsinline class="back-video">
-      <source src="https://cdn.imgchest.com/files/6ec6148396a8.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
+  <div class="tabs">
+    <span class="tab active" onclick="switchTab('card2', this)">Education</span>
+    <span class="tab" onclick="switchTab('card3', this)">Placeholder</span>
+    <span class="tab" onclick="switchTab('card4', this)">Socials</span>
+    <span class="tab" onclick="switchTab('card5', this)">Other</span>
   </div>
 
-  <script src="profile.js"></script>
-  <script src="nav.js"></script>
+  <div class="view">
+    <div id="card2" class="box pane">
+      <div class="body">
+        <h2 class="title">Currently Studying at...</h2>
+        <p>Satit Prasarnmit (Secondary)<br>Grade 11 (M.5)<br>Computer Engineering (CE)</p>
+      </div>
+    </div>
+
+    <div id="card3" class="box pane" style="display: none;">
+      <div class="body">
+        <h2 class="title">Placeholderrrr</h2>
+        <p>im a larper bro</p>
+      </div>
+    </div>
+
+    <div id="card4" class="box pane" style="display: none;">
+      <div class="body">
+        <h2 class="title">Socials</h2>
+        <div class="socs">
+          <a href="#"><i class="fab fa-discord"></i> playerv2</a>
+          <a href="#"><i class="fab fa-instagram"></i> theplayerv2</a>
+          <a href="#"><i class="fab fa-spotify"></i> theplayerv2</a>
+          <a href="#"><i class="fab fa-tiktok"></i> theplayerver2</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="card5" class="box pane" style="display: none;">
+      <div class="body">
+        <h2 class="title">Other</h2>
+        <p>whatever makes you find me ig bro.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg">
+  <video autoplay loop muted playsinline class="bgvideo">
+    <source src="https://cdn.imgchest.com/files/6ec6148396a8.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+</div>
+
+<script src="profile.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>
