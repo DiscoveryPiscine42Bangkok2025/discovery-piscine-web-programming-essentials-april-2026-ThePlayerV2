@@ -12,15 +12,13 @@ document.addEventListener('click', function(e) {
     }
 });
 
-function navToTab(tabId) {
-  if (window.location.pathname.includes("profile.html")) {
-    const allTabs = document.querySelectorAll('.tab');
-    let targetEl = null;
-    allTabs.forEach(t => {
-      if (t.getAttribute('onclick').includes(tabId)) targetEl = t;
-    });
-    if (targetEl) switchTab(tabId, targetEl);
-  } else {
-    window.location.href = `profile.html?tab=${tabId}`;
-  }
+function scrollToSection(sectionId) {
+    if (window.location.pathname.includes("profile.html")) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    } else {
+        window.location.href = `profile.html#${sectionId}`;
+    }
 }

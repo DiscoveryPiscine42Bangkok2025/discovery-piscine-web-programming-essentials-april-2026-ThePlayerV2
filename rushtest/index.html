@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <nav class="fabnav fade">
+    <div class="navbar" id="navbar">
+      <div class="navtrigger" onclick="toggleNav()">
+        <img src="https://cdn.imgchest.com/files/d405be82fa44.png" alt="Menu" id="nav-icon">
+      </div>
+      <div class="navmenu">
+        <div class="navitem"><a href="javascript:void(0)" onclick="showPage('home-page')">Home</a></div>
+        
+        <div class="navitem dropdown">
+          <a href="javascript:void(0)" onclick="showPage('lamtan-page')">Lamtan</a>
+          <div class="dropdown-content">
+            <a href="javascript:void(0)" class="drop-item" onclick="showPage('lamtan-page', 'card2')">Education</a>
+            <a href="javascript:void(0)" class="drop-item" onclick="showPage('lamtan-page', 'card3')">Showcase</a>
+            <a href="javascript:void(0)" class="drop-item" onclick="showPage('lamtan-page', 'card4')">Socials</a>
+            <a href="javascript:void(0)" class="drop-item" onclick="showPage('lamtan-page', 'card5')">Other</a>
+          </div>
+        </div>
+
+        <div class="navitem"><a href="javascript:void(0)" onclick="showPage('baan-page')">Baan</a></div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="home-page" class="main-page">
+    <header class="mainheader fade">
+      <h1 class="pagetitle">Home</h1>
+    </header>
+
+    <div class="image-container">
+      <div class="profile-group fade" onclick="showPage('lamtan-page')">
+        <figure class="profile-trigger">
+          <img src="https://cdn.imgchest.com/files/5b95f8070fc9.jpg" alt="Lamtan">
+          <h2>Lamtan's Profile</h2>
+        </figure>
+        <div class="about-card">
+          <h3>About</h3>
+          <h1>Lamtan</h1>
+          <p>Discord Community Manager,<br>Loves Siberian Huskies and Sea Lions</p>
+          <span class="see-more-btn">See More</span>
+        </div>
+      </div>
+
+      <div class="profile-group fade" onclick="showPage('baan-page')">
+        <figure class="profile-trigger">
+          <img src="https://cdn.imgchest.com/files/1037c59a8a04.jpeg" alt="Baan">
+          <h2>Baan's Profile</h2>
+        </figure>
+        <div class="about-card">
+          <h3>About</h3>
+          <h1>Baan</h1>
+          <p>Music Composer, Song Writer<br>Loves Cats, Sunfish and Bees</p>
+          <span class="see-more-btn">See More</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg">
+      <video autoplay loop muted playsinline class="bgvideo">
+        <source src="https://cdn.imgchest.com/files/8a9d99577d63.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
+    </div>
+  </div>
+
+  <div id="lamtan-page" class="main-page" style="display: none;">
+    <div class="wrap">
+      <img src="https://cdn.imgchest.com/files/5b95f8070fc9.jpg" alt="PFP" class="pfp fade">
+      <h1 class="name fade">tkunariy</h1>
+      <p class="realname fade">(Teerath Kunariyasup)</p>
+
+      <div class="bio fade">
+        <div class="body">
+          <div class="sub-card">
+            <h2 class="title">About Me</h2>
+            <p>Discord Community Manager &<br>Student at Satit Prasarnmit</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs fade">
+        <span class="tab active" onclick="switchTab('card2', this)">Education</span>
+        <span class="tab" onclick="switchTab('card3', this)">Showcase</span>
+        <span class="tab" onclick="switchTab('card4', this)">Socials</span>
+        <span class="tab" onclick="switchTab('card5', this)">Other</span>
+      </div>
+
+      <div class="view fade">
+        <div id="card2" class="box pane pane-active">
+          <div class="body">
+            <div class="sub-card"><h2 class="title">Currently Studying at...</h2><p>Satit Prasarnmit (Secondary)<br>Grade 11 (M.5)<br>Computer Engineering (CE)</p></div>
+          </div>
+        </div>
+        <div id="card3" class="box pane" style="display: none;"><div class="body"><div class="sub-card"><h2 class="title">Title</h2><p>Description</p></div></div></div>
+        <div id="card4" class="box pane" style="display: none;">
+          <div class="body">
+            <div class="sub-card">
+              <h2 class="title">Socials</h2>
+              <div class="socs">
+                <a href="https://discord.com/users/1089116888296071289" target="_blank"><i class="fab fa-discord"></i> playerv2</a>
+                <a href="https://guns.lol/theplayerv2" target="_blank"><i class="fas fa-crosshairs"></i> theplayerv2</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="card5" class="box pane" style="display: none;">
+            <div class="body">
+                <div class="sub-card"><h2 class="title">Experience</h2><p>Community Manager for 3,000+ members.</p></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bg">
+      <video autoplay loop muted playsinline class="bgvideo">
+        <source src="https://cdn.imgchest.com/files/6ec6148396a8.mp4" type="video/mp4">
+      </video>
+      <div class="overlay"></div>
+    </div>
+  </div>
+
+  <div id="baan-page" class="main-page" style="display: none;">
+    <h1 style="text-align: center; margin-top: 20vh;">Baan's Page Content Goes Here</h1>
+  </div>
+
+  <footer class="mainfooter footer fade">
+    <h1 class="pagetitle">Portfolio</h1>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
