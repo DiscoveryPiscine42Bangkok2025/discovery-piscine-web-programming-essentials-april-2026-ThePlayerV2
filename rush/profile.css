@@ -8,6 +8,7 @@
 body {
   background: black;
   color: white;
+  overflow-x: hidden;
 }
 
 .bg {
@@ -38,7 +39,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 20px 80px 20px;
+  padding: 5vh 20px 120px 20px;
   min-height: 100vh;
   position: relative;
   z-index: 10;
@@ -69,15 +70,51 @@ body {
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  padding: 25px 40px;
+  padding: 15px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   margin-bottom: 20px;
   width: fit-content;
+  min-width: 320px;
   max-width: 90vw;
 }
 
-.bio { min-width: 300px; }
+.sub-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.sub-card:last-child {
+  margin-bottom: 0;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: white;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
 
 .tabs {
   display: flex;
@@ -117,6 +154,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .body p {
@@ -124,14 +162,15 @@ body {
   font-size: 0.95rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .socs {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 .socs a {
@@ -139,6 +178,7 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   font-size: 1rem;
   padding: 8px 15px;
@@ -151,13 +191,27 @@ body {
   text-shadow: 0 0 2px #fff, 0 0 5px rgba(255, 255, 255, 0.5); 
 }
 
-.socs i {
-  font-size: 1.2rem;
-  width: 20px;
+.footer {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
   text-align: center;
+  width: 100%;
+  pointer-events: none;
 }
 
-/* --- Animations (No Blur) --- */
+.pagetitle {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.5;
+  margin: 0;
+}
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -185,4 +239,4 @@ body {
 .tabs.fade { animation-delay: 0.5s; }
 .view.fade { animation-delay: 0.6s; }
 .fabnav.fade { animation-delay: 0.8s; }
-
+.footer.fade { animation-delay: 1s; }
