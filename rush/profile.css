@@ -85,6 +85,14 @@ body {
   margin-bottom: 30px;
   width: 95%;
   max-width: 850px;
+  transition: all 0.5s ease;
+}
+
+.box:target {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .sub-card {
