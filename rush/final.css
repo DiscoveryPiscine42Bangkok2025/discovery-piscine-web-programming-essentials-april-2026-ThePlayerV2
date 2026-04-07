@@ -1,25 +1,46 @@
 :root {
     --bg-color: #0b0b0b;
-    --card-bg: #161616;
     --accent-color: #ffffff;
     --nav-glass: rgba(20, 20, 20, 0.85);
-    --text-main: #ffffff;
-    --text-dim: #a0a0a0;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
-    margin: 0;
     background-color: var(--bg-color);
-    color: var(--text-main);
+    color: white;
     overflow-x: hidden;
 }
 
-/* Navigation Styles */
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.bgvideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .fabnav {
     position: fixed;
     top: 25px;
@@ -90,7 +111,7 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
     padding: 8px 12px;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .navitem:hover {
@@ -99,14 +120,15 @@ body {
     border-radius: 8px;
 }
 
-/* Profile Styles */
 .image-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 3rem;
-    padding: 15vh 5% 8vh;
+    padding: 15vh 5% 80px;
+    position: relative;
+    z-index: 10;
 }
 
 .profile-group {
@@ -115,13 +137,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .profile-trigger {
     cursor: pointer;
     text-align: center;
     width: 100%;
-    margin: 0;
 }
 
 .profile-trigger img {
@@ -130,76 +152,80 @@ body {
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 3px solid white;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .profile-trigger h2 {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    margin: 15px 0 0 0;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .about-card {
-    display: none;
-    background-color: var(--card-bg);
-    padding: 2.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 25px 40px;
     border-radius: 20px;
     width: 100%;
     text-align: center;
     margin-top: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+}
+
+.profile-group:hover .about-card {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-group:hover .profile-trigger img {
+    transform: scale(1.05) translateY(-10px);
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
 .about-card h3 {
-    color: var(--text-dim);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    margin-bottom: 5px;
+    margin: 5px 0 30px 0;
+    color: #bbb;
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
 .about-card h1 {
     margin: 0 0 10px 0;
-    font-size: 2rem;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 .about-card p {
-    color: var(--text-dim);
-    line-height: 1.6;
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
 }
 
 .see-more-btn {
     display: inline-block;
-    padding: 0.8rem 2.2rem;
-    background-color: #fff;
-    color: #000;
+    padding: 10px 30px;
+    background: #ffffff;
+    color: #000000;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 700;
-    transition: transform 0.2s ease;
-}
-
-.see-more-btn:hover {
-    transform: scale(1.05);
-}
-
-/* Responsiveness */
-@media (hover: hover) {
-    .profile-trigger:hover img {
-        transform: scale(1.05) translateY(-10px);
-        border-color: rgba(255,255,255,0.4);
-    }
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
 }
 
 @media (max-width: 600px) {
-    .navbar.active {
-        min-width: 200px;
-    }
-    .navmenu {
-        gap: 5px;
-    }
-    .navitem {
-        font-size: 0.8rem;
-    }
+    .navbar.active { min-width: 200px; }
+    .navitem { font-size: 0.8rem; }
 }
